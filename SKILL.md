@@ -1,6 +1,6 @@
 ---
 name: alkosto-wait-optimizer
-description: Estimar tiempo de espera optimo para la promocion de Alkosto (cliente 25 o 50) con dos enfoques: flujo de compras observado en cajas o timestamps de anuncios de ganadores. Usar cuando se necesite decidir si conviene esperar, calcular tiempo probable al proximo ganador, o fijar un cutoff de espera.
+description: "Estimar tiempo de espera optimo para la promocion de Alkosto (cliente 25 o 50) con dos enfoques: flujo de compras observado en cajas o timestamps de anuncios de ganadores. Usar cuando se necesite decidir si conviene esperar, calcular tiempo probable al proximo ganador, o fijar un cutoff de espera."
 ---
 
 # Alkosto Wait Optimizer
