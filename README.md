@@ -13,14 +13,14 @@ Skill para estimar tiempo de espera optimo en la promo de Alkosto usando dos met
 
 ## Estructura
 
-- `skill.json`: manifiesto del skill.
-- `index.ts`: calculadora principal.
-- `package.json` y `tsconfig.json`: soporte TypeScript.
+- `SKILL.md`: skill instalable por `npx skills add`.
+- `scripts/calc_wait.py`: calculadora deterministica para ejecutar por terminal.
+- `skill.json` + `index.ts`: implementacion TypeScript para runtimes compatibles con ese formato.
 
 ## Ejemplo 1: por flujo de compras
 
 ```bash
-npx skills run alkosto-wait-optimizer --input '{
+python3 scripts/calc_wait.py --pretty --input-json '{
   "mode": "purchase_rate",
   "is_weekend_or_holiday": true,
   "model": "global",
@@ -37,7 +37,7 @@ npx skills run alkosto-wait-optimizer --input '{
 ## Ejemplo 2: por timestamps de ganadores
 
 ```bash
-npx skills run alkosto-wait-optimizer --input '{
+python3 scripts/calc_wait.py --pretty --input-json '{
   "mode": "winner_timestamps",
   "winner_timestamps": ["12:10:15", "12:27:40", "12:46:05", "13:02:20"],
   "elapsed_since_last_winner_minutes": 6,
@@ -57,5 +57,5 @@ gh repo create broomva/alkosto-wait-optimizer-skill --public --source . --remote
 2. Instalar skill desde GitHub:
 
 ```bash
-npx skills add https://github.com/broomva/alkosto-wait-optimizer-skill --skill alkosto-wait-optimizer
+npx skills add https://github.com/broomva/alkosto-wait-optimizer-skill --skill alkosto-wait-optimizer --yes
 ```
